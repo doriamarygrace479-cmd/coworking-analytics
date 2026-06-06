@@ -1,10 +1,9 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: analytics-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: analytics-app
@@ -15,7 +14,7 @@ spec:
     spec:
       containers:
         - name: analytics-app
-          image: image: 850748373480.dkr.ecr.us-east-1.amazonaws.com/analytics-app:1.0.7
+          image: 850748373480.dkr.ecr.us-east-1.amazonaws.com/analytics-app:1.0.7
           ports:
             - containerPort: 5153
           envFrom:
@@ -23,10 +22,3 @@ spec:
                 name: analytics-config
             - secretRef:
                 name: analytics-secret
-          resources:
-            requests:
-              memory: "128Mi"
-              cpu: "250m"
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
