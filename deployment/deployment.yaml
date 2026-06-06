@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: analytics-app
-          image: 850748373480.dkr.ecr.us-east-1.amazonaws.com/analytics-app:1.0.7
+          image: 850748373480.dkr.ecr.us-east-1.amazonaws.com/analytics-app:1.0.8
           ports:
             - containerPort: 5153
           envFrom:
